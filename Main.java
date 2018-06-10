@@ -58,6 +58,7 @@ public class Main
             AppCreationPA appCreationPA = new AppCreationPA();
             AppApproveHOPA appApproveHOPA = new AppApproveHOPA();
             TenderCreationPA tenderCreationPA = new TenderCreationPA();
+            DocumentCreationPA documentCreationPA = new DocumentCreationPA();
             
             try
             {
@@ -67,6 +68,7 @@ public class Main
                 appId = appCreationPA.appCreationPA(driver, ii, currentUrl, wait, paUserID, paPassword);
                 appApproveHOPA.appApproveHOPA(driver, ii, currentUrl, wait, appId, hopaUserID, hopaPassword);
                 tenderID = tenderCreationPA.tendCreationPA(builder , driver, ii, currentUrl, wait, appId, paUserID, paPassword);
+                documentCreationPA.documentCreationPA(builder , driver, ii, currentUrl, wait, tenderID);
                 
             }        
             catch(Exception e)

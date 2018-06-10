@@ -80,10 +80,12 @@ public class TenderCreationPA {
         WebElement table = driver.findElement(By.id("list"));
         List<WebElement> allRows = table.findElements(By.tagName("tr"));
 
-        for (int i = 2; i < allRows.size(); i++) {
+        for (int i = 2; i < allRows.size(); i++) 
+        {
             linkAppID = driver.findElement(By.xpath(beforeAppIDXpath + i + AfterAppIDXpath)).getText();
 
-            if (linkAppID.equalsIgnoreCase(aPPID)) {
+            if (linkAppID.equalsIgnoreCase(aPPID)) 
+            {
                 String s = beforeAppIDXpath + i + AfterAppIDXpath;
                 System.out.println(linkAppID);
 
