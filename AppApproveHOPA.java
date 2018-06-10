@@ -78,10 +78,10 @@ public class AppApproveHOPA
                 driver.findElement(By.xpath(fileProcessingLink)).click();
                 break;
             }
-            //System.out.println(linkAppID);
+            
         }
 
-        //*[@id='list']/tbody/tr[4]/td/a[contains(@href,'FileProcessing.jsp')]
+        
         String editorFramePath = "//iframe[contains(@class, 'cke_wysiwyg_frame cke_reset')]";
         chkEditor(driver, wait, editorFramePath);
 

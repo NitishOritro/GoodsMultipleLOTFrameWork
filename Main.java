@@ -59,6 +59,10 @@ public class Main
             AppApproveHOPA appApproveHOPA = new AppApproveHOPA();
             TenderCreationPA tenderCreationPA = new TenderCreationPA();
             DocumentCreationPA documentCreationPA = new DocumentCreationPA();
+            CommitteeFormation committeeFormation = new CommitteeFormation();
+            CommitteeApproverHOPA committeeApproverHOPA = new CommitteeApproverHOPA();
+            TenderWorkflowCreationPA tenderWorkflowCreationPA = new TenderWorkflowCreationPA();
+            TenderApproveHOPA tenderApproveHOPA = new TenderApproveHOPA();
             
             try
             {
@@ -69,6 +73,10 @@ public class Main
                 appApproveHOPA.appApproveHOPA(driver, ii, currentUrl, wait, appId, hopaUserID, hopaPassword);
                 tenderID = tenderCreationPA.tendCreationPA(builder , driver, ii, currentUrl, wait, appId, paUserID, paPassword);
                 documentCreationPA.documentCreationPA(builder , driver, ii, currentUrl, wait, tenderID);
+                committeeFormation.committeeFormation(builder, driver, ii, currentUrl, wait, tenderID);
+                committeeApproverHOPA.committeeApproverHOPA(builder, driver, ii, currentUrl, wait, tenderID, hopaUserID, hopaPassword);
+                tenderWorkflowCreationPA.tenderWorkflowCreationPA(builder, driver, ii, currentUrl, wait, tenderID, paUserID, paPassword);
+                tenderApproveHOPA.tenderApproveHOPA(builder, driver, ii, currentUrl, wait, tenderID, hopaUserID, hopaPassword);
                 
             }        
             catch(Exception e)
